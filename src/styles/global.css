@@ -78,3 +78,37 @@ h1 {
   padding: 3rem 0 2rem;
   color: var(--muted);
 }
+
+.post-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.post-preview {
+  background: white;
+  border: 1px solid var(--blue);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.post-preview h2 {
+  margin-bottom: 0.25rem;
+}
+
+.post-preview a {
+  text-decoration: none;
+}
+
+time {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.post {
+  max-width: 760px;
+}
+
+.post-content {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+}
