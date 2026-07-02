@@ -1,0 +1,58 @@
+---
+const { title, subtitle, href, cover, status } = Astro.props;
+const dialogId = `cover-${title.toLowerCase().replaceAll(" ", "-").replaceAll("'", "")}`;
+---
+
+<article class="book-card">
+  {
+    cover && (
+      <>
+        <button class="book-cover-button" type="button" data-dialog-target={dialogId}>
+          <img class="book-cover" src={cover} alt={`Couverture du roman ${title}`} />
+        </button>
+
+        <dialog id={dialogId} class="cover-dialog">
+          <button class="dialog-close" type="button" data-dialog-close>
+            Fermer
+          </button>
+          <img src={cover} alt={`Couverture du roman ${title}`} />
+        </dialog>
+      </>
+    )
+  }
+
+  <div class="book-card-content">
+    {status === "published" && <p class="eyebrow">Disponible</p>}
+
+    <h2>
+      <a href={href}>{title}</a>
+    </h2>
+
+    {subtitle && <p>{subtitle}</p>}
+  </div>
+</article>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>("[data-dialog-target]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const dialogId = button.dataset.dialogTarget;
+      if (!dialogId) return;
+
+      const dialog = document.getElementById(dialogId);
+
+      if (dialog instanceof HTMLDialogElement) {
+        dialog.showModal();
+      }
+    });
+  });
+
+  document.querySelectorAll<HTMLButtonElement>("[data-dialog-close]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const dialog = button.closest("dialog");
+
+      if (dialog instanceof HTMLDialogElement) {
+        dialog.close();
+      }
+    });
+  });
+</script>

@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const books = await getCollection("books");
+
+  return books.map((book) => ({
+    params: {
+      slug: book.id,
+    },
+
+    props: {
+      book,
+    },
+  }));
+}
+
+const { book } = Astro.props;
+
+const { Content } = await render(book);
+---
+
+<BaseLayout
+  title={`${book.data.title} — Charlotte Thornet`}
+  description={book.data.subtitle}
+>
+  <header class="book-hero">
+    <h1>Le Chaos, jusqu'au cou !</h1>
+  </header>
+  <article class="book-detail">
+    <div class="book-detail-content">
+      <p class="eyebrow">Roman</p>
+
+      {book.data.subtitle && <p class="lead">{book.data.subtitle}</p>}
+
+      <Content />
+      {
+        book.data.amazon && (
+          <a class="button" href={book.data.amazon}>
+            📖 Acheter le livre
+          </a>
+        )
+      }
+    </div>
+
+    {
+      book.data.cover && (
+        <aside class="book-detail-cover">
+          <img
+            src={book.data.cover}
+            alt={`Couverture du roman ${book.data.title}`}
+          />
+        </aside>
+      )
+    }
+  </article>
+</BaseLayout>

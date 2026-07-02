@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BookCard from "../../components/BookCard.astro";
+import { getCollection } from "astro:content";
+
+const books = await getCollection("books");
+---
+
+<BaseLayout title="Romans — Charlotte Thornet">
+  <h1>Mes romans</h1>
+
+  <p>Bienvenue dans le Cosmovarium.</p>
+
+  <section class="book-list">
+    {
+      books.map((book) => (
+        <BookCard
+          title={book.data.title}
+          subtitle={book.data.subtitle}
+          href={`/romans/${book.id}`}
+          cover={book.data.cover}
+          status={book.data.status}
+        />
+      ))
+    }
+  </section>
+</BaseLayout>
