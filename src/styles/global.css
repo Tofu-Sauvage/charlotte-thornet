@@ -1,0 +1,80 @@
+:root {
+  --bg: #f7fbff;
+  --text: #162033;
+  --muted: #5f6f86;
+  --accent: #ef7d32;
+  --blue: #dceefa;
+  --max-width: 960px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+main,
+.site-header,
+.site-footer {
+  width: min(100% - 2rem, var(--max-width));
+  margin-inline: auto;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 0;
+}
+
+.site-title {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.hero {
+  padding: 5rem 0;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  line-height: 1;
+}
+
+.book-card {
+  background: white;
+  border: 1px solid var(--blue);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.site-footer {
+  padding: 3rem 0 2rem;
+  color: var(--muted);
+}
