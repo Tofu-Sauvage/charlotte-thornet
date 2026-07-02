@@ -2,27 +2,31 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
-const posts = (await getCollection("blog", ({ data }) => {
-  return import.meta.env.PROD ? data.draft !== true : true;
-})).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = (
+  await getCollection("blog", ({ data }) => {
+    return import.meta.env.PROD ? data.draft !== true : true;
+  })
+).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <BaseLayout title="Journal — Charlotte Thornet">
   <h1>Journal</h1>
 
   <section class="post-list">
-    {posts.map((post) => (
-      <article class="post-preview">
-        <time datetime={post.data.pubDate.toISOString()}>
-          {post.data.pubDate.toLocaleDateString("fr-FR")}
-        </time>
+    {
+      posts.map((post) => (
+        <article class="post-preview">
+          <time datetime={post.data.pubDate.toISOString()}>
+            {post.data.pubDate.toLocaleDateString("fr-FR")}
+          </time>
 
-        <h2>
-          <a href={`/journal/${post.id}`}>{post.data.title}</a>
-        </h2>
+          <h2>
+            <a href={`/journal/${post.id}`}>{post.data.title}</a>
+          </h2>
 
-        <p>{post.data.description}</p>
-      </article>
-    ))}
+          <p>{post.data.description}</p>
+        </article>
+      ))
+    }
   </section>
 </BaseLayout>
