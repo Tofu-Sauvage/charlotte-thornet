@@ -5,7 +5,7 @@ import { quotes } from "../data/quotes";
 import { getCollection } from "astro:content";
 
 const books = await getCollection("books");
-const featuredQuote = quotes[Math.floor(Math.random() * quotes.length)];
+const fallbackQuote = quotes[0];
 ---
 
 <BaseLayout title="Charlotte Thornet — Autrice de fantasy">
@@ -13,15 +13,46 @@ const featuredQuote = quotes[Math.floor(Math.random() * quotes.length)];
     <p class="eyebrow">Fantasy · Dragons · Magie · Ironie</p>
     <h1>Charlotte Thornet</h1>
     <p>
-      Écrire pour que cohabitent dragons, magie, forces
-      cosmiques, dérision et tendresse.
+      Écrire pour que cohabitent dragons, magie, forces cosmiques, dérision et
+      tendresse.
     </p>
   </section>
 
-  <figure class="home-quote">
-    <blockquote>« {featuredQuote.text} »</blockquote>
-    {featuredQuote.source && <figcaption>{featuredQuote.source}</figcaption>}
+  <figure class="home-quote" data-random-quote>
+    <blockquote data-random-quote-text>« {fallbackQuote.text} »</blockquote>
+    {
+      fallbackQuote.source && (
+        <figcaption data-random-quote-source>{fallbackQuote.source}</figcaption>
+      )
+    }
   </figure>
+
+  <script
+    is:inline
+    type="application/json"
+    id="home-quotes"
+    set:html={JSON.stringify(quotes)}
+  />
+
+  <script>
+    const quotesData = document.getElementById("home-quotes");
+    const quoteText = document.querySelector("[data-random-quote-text]");
+    const quoteSource = document.querySelector<HTMLElement>(
+      "[data-random-quote-source]",
+    );
+
+    if (quotesData?.textContent && quoteText) {
+      const quotes = JSON.parse(quotesData.textContent);
+      const quote = quotes[Math.floor(Math.random() * quotes.length)];
+
+      quoteText.textContent = `« ${quote.text} »`;
+
+      if (quoteSource) {
+        quoteSource.textContent = quote.source ?? "";
+        quoteSource.hidden = !quote.source;
+      }
+    }
+  </script>
 
   <section class="home-section">
     <div class="section-heading">

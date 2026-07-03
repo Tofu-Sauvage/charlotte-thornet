@@ -9,6 +9,6 @@ export const quotes = [
   },
   {
     text: "Je m’attendais à quelque chose pour m’aider, pas une victime potentielle supplémentaire à gérer.",
-    source: "Le Chaos, jusqu'au cou !, le Hasard",
+    source: "Le Chaos, jusqu'au cou !",
   },
 ];
