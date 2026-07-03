@@ -60,6 +60,61 @@ nav a {
   padding: 5rem 0;
 }
 
+.home-quote {
+  max-width: 720px;
+  margin: 0 auto 4rem;
+  padding: 1.5rem;
+  border-block: 1px solid var(--blue);
+  text-align: center;
+}
+
+.home-quote blockquote {
+  margin: 0;
+  font-size: clamp(1.15rem, 3vw, 1.5rem);
+  line-height: 1.45;
+}
+
+.home-quote figcaption {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.home-section {
+  margin-block: 4rem;
+}
+
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  line-height: 1.1;
+}
+
+.section-heading a {
+  color: var(--muted);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.section-heading a:hover,
+.site-footer a:hover {
+  color: var(--accent);
+}
+
+.home-books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 1.5rem;
+}
+
 .eyebrow {
   color: var(--accent);
   font-weight: 700;
@@ -80,8 +135,21 @@ h1 {
 }
 
 .site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   padding: 3rem 0 2rem;
   color: var(--muted);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .post-list {
@@ -204,6 +272,20 @@ time {
   color: var(--muted);
 }
 
+.about-detail {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.about-portrait img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 1rem 2rem rgb(22 32 51 / 0.22);
+}
+
 .button {
   display: inline-block;
   justify-self: start;
@@ -222,5 +304,19 @@ time {
 
   .book-detail-cover {
     order: 2;
+  }
+
+  .about-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }

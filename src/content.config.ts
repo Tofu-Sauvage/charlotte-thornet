@@ -22,7 +22,7 @@ const books = defineCollection({
     subtitle: z.string().optional(),
     releaseDate: z.date(),
     cover: z.string(),
-    amazon: z.string().url(),
+    amazon: z.string().url().optional(),
     status: z.enum([
       "published",
       "coming-soon",
@@ -34,4 +34,3 @@ export const collections = {
   blog,
   books,
 };
-

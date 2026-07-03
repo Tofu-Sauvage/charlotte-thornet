@@ -1,5 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import BookCard from "../components/BookCard.astro";
+import { quotes } from "../data/quotes";
+import { getCollection } from "astro:content";
+
+const books = await getCollection("books");
+const featuredQuote = quotes[Math.floor(Math.random() * quotes.length)];
 ---
 
 <BaseLayout title="Charlotte Thornet — Autrice de fantasy">
@@ -7,8 +13,34 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <p class="eyebrow">Fantasy · Dragons · Magie · Ironie</p>
     <h1>Charlotte Thornet</h1>
     <p>
-      J’écris pour faire cohabiter des dragons, de la magie, des forces
-      cosmiques… et beaucoup d’ironie.
+      Écrire pour que cohabitent dragons, magie, forces
+      cosmiques, dérision et tendresse.
     </p>
+  </section>
+
+  <figure class="home-quote">
+    <blockquote>« {featuredQuote.text} »</blockquote>
+    {featuredQuote.source && <figcaption>{featuredQuote.source}</figcaption>}
+  </figure>
+
+  <section class="home-section">
+    <div class="section-heading">
+      <h2>Romans</h2>
+      <a href="/romans">Tous les romans →</a>
+    </div>
+
+    <div class="home-books-grid">
+      {
+        books.map((book) => (
+          <BookCard
+            title={book.data.title}
+            subtitle={book.data.subtitle}
+            href={`/romans/${book.id}`}
+            cover={book.data.cover}
+            status={book.data.status}
+          />
+        ))
+      }
+    </div>
   </section>
 </BaseLayout>
