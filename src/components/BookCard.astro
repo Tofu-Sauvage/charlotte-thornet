@@ -23,6 +23,7 @@ const dialogId = `cover-${title.toLowerCase().replaceAll(" ", "-").replaceAll("'
 
   <div class="book-card-content">
     {status === "published" && <p class="eyebrow">Disponible</p>}
+    {status === "coming-soon" && <p class="eyebrow">À paraître</p>}
 
     <h2>
       <a href={href}>{title}</a>

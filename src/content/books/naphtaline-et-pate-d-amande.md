@@ -5,7 +5,7 @@ subtitle: "Second livre du Cosmovarium"
 
 releaseDate: 2026-12-02
 
-cover: ""
+cover: "/images/coming-soon-img.webp"
 
 status: "coming-soon"
 ---
