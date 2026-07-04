@@ -1,12 +1,24 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { absoluteUrl, siteConfig, type JsonLd } from "../lib/seo";
 import "../styles/global.css";
 
 const {
-  title = "Charlotte Thornet",
-  description = "Autrice de fantasy, dragons, magie et ironie.",
+  title = siteConfig.defaultTitle,
+  description = siteConfig.defaultDescription,
+  canonical,
+  image = siteConfig.defaultImage,
+  type = "website",
+  robots = "index, follow",
+  jsonLd = [],
 } = Astro.props;
+
+const canonicalUrl = canonical
+  ? absoluteUrl(canonical)
+  : absoluteUrl(Astro.url.pathname);
+const imageUrl = absoluteUrl(image);
+const jsonLdItems = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
 ---
 
 <!doctype html>
@@ -14,8 +26,37 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
     <meta name="viewport" content="width=device-width" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:site_name" content={siteConfig.name} />
+    <meta property="og:locale" content="fr_FR" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+
     <title>{title}</title>
+
+    {
+      jsonLdItems.map((item: JsonLd) => (
+        <script
+          is:inline
+          type="application/ld+json"
+          set:html={JSON.stringify(item)}
+        />
+      ))
+    }
   </head>
   <body>
     <Header />

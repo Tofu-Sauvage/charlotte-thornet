@@ -2,13 +2,19 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BookCard from "../components/BookCard.astro";
 import { quotes } from "../data/quotes";
+import { createAuthorJsonLd, siteConfig } from "../lib/seo";
 import { getCollection } from "astro:content";
 
 const books = await getCollection("books");
 const fallbackQuote = quotes[0];
 ---
 
-<BaseLayout title="Charlotte Thornet — Autrice de fantasy">
+<BaseLayout
+  title="Charlotte Thornet — Autrice de fantasy"
+  description={siteConfig.defaultDescription}
+  canonical="/"
+  jsonLd={createAuthorJsonLd()}
+>
   <section class="hero">
     <p class="eyebrow">Fantasy · Dragons · Magie · Ironie</p>
     <h1>Charlotte Thornet</h1>

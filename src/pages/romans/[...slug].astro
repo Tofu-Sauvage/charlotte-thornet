@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection, render } from "astro:content";
+import { absoluteUrl, createBookJsonLd } from "../../lib/seo";
 
 export async function getStaticPaths() {
   const books = await getCollection("books");
@@ -19,11 +20,17 @@ export async function getStaticPaths() {
 const { book } = Astro.props;
 
 const { Content } = await render(book);
+const canonical = `/romans/${book.id}`;
+const canonicalUrl = absoluteUrl(canonical);
 ---
 
 <BaseLayout
   title={`${book.data.title} — Charlotte Thornet`}
   description={book.data.subtitle}
+  canonical={canonical}
+  image={book.data.cover || undefined}
+  type="book"
+  jsonLd={createBookJsonLd(book, canonicalUrl)}
 >
   <header class="book-hero">
     <h1>{book.data.title}</h1>

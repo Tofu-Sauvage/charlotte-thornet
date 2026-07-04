@@ -1,8 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const description =
+  "À propos de Charlotte Thornet, autrice de fantasy peuplée de magie, de forces capricieuses et d'ironie.";
 ---
 
-<BaseLayout title="À propos — Charlotte Thornet">
+<BaseLayout
+  title="À propos — Charlotte Thornet"
+  description={description}
+  canonical="/a-propos"
+>
   <h1>À propos</h1>
 
   <div class="about-detail">
@@ -13,10 +20,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </p>
 
       <p>
-        Autrice autiste, elle aime explorer les décalages, les règles invisibles et
-        les mondes trop sûrs d’eux-mêmes, surtout lorsqu’ils commencent à vaciller.
-        Dans ses récits, le merveilleux sert autant à provoquer des catastrophes
-        qu’à éclairer les failles, les tendresses et les contradictions humaines.
+        Autrice autiste, elle aime explorer les décalages, les règles invisibles
+        et les mondes trop sûrs d’eux-mêmes, surtout lorsqu’ils commencent à
+        vaciller. Dans ses récits, le merveilleux sert autant à provoquer des
+        catastrophes qu’à éclairer les failles, les tendresses et les
+        contradictions humaines.
       </p>
     </div>
 

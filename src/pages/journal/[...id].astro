@@ -20,6 +20,8 @@ const { Content } = await render(post);
 <BaseLayout
   title={`${post.data.title} — Charlotte Thornet`}
   description={post.data.description}
+  canonical={`/journal/${post.id}`}
+  type="article"
 >
   <article class="post">
     <p class="eyebrow">Journal</p>

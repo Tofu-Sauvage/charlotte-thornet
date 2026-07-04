@@ -11,4 +11,8 @@ export const quotes = [
     text: "Je m’attendais à quelque chose pour m’aider, pas une victime potentielle supplémentaire à gérer.",
     source: "Le Chaos, jusqu'au cou !",
   },
+  {
+    text: "Plus il vieillissait, plus il haïssait respirer l’air frais et voir la lumière. Il aurait préféré repartir en guerre contre les armées du Néant sur un champ de bataille cosmique plutôt que d’aller prendre le soleil dans le potager de l’Académie.",
+    source: "Le Chaos, jusqu'au cou !",
+  },
 ];

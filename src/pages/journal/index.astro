@@ -9,7 +9,11 @@ const posts = (
 ).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<BaseLayout title="Journal — Charlotte Thornet">
+<BaseLayout
+  title="Journal — Charlotte Thornet"
+  description="Actualités, notes et coulisses d'écriture de Charlotte Thornet."
+  canonical="/journal"
+>
   <h1>Journal</h1>
 
   <section class="post-list">
