@@ -20,6 +20,8 @@ const posts = (
     {
       posts.map((post) => (
         <article class="post-preview">
+          <p class="eyebrow">{post.data.category}</p>
+
           <time datetime={post.data.pubDate.toISOString()}>
             {post.data.pubDate.toLocaleDateString("fr-FR")}
           </time>

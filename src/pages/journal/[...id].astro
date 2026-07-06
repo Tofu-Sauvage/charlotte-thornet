@@ -24,7 +24,7 @@ const { Content } = await render(post);
   type="article"
 >
   <article class="post">
-    <p class="eyebrow">Journal</p>
+    <p class="eyebrow">{post.data.category}</p>
 
     <h1>{post.data.title}</h1>
 
