@@ -10,13 +10,20 @@ cover: "/images/coming-soon-img.webp"
 status: "coming-soon"
 ---
 
-Figurez-vous que la corruption et l'abus de pouvoir n'épargnent pas les mondes fantastiques.
+Figurez-vous que corruption et abus de pouvoir n'épargnent pas les mondes fantastiques.
 
 ## L'histoire
 
-Lorsqu'il faut se convaincre qu'un suicide est un suicide... Il s'agit rarement d'un suicide.
-Dans la grande cité de Port-Épine, Patricia Saugrenuit, brillante autrice de polar, va l'apprendre à ses dépens.
+Lorsqu'il faut se convaincre qu'un suicide est véritablement un suicide... c'est qu'il s'agit rarement d'un suicide.
+
+Et Patricia Saugrenuit s'y connaît ! Les enquêtes criminelles, c'est son métier. Ou plutôt : c'est ce qu'elle écrit dans ses romans à succès, lus du Méridionis jusqu'au Norient.
+
+Mais lorsque son propre fils se retrouve mêlé à une affaire suspecte dont les autorités se contrefichent, la frontière entre fiction et réalité commence à dangereusement s'effriter.
+
+Entre corruption ordinaire, magie approximative et dragons amateurs de biscuits, Port-Épine s'apprête à découvrir le prix des secrets et le coût des lubies.
+
+Et aussi que peu de créatures acceptent les chaînes.
 
 ## Pourquoi ce roman ?
 
-À venir...
+Parce que certaines injustices doivent être dénoncées, par tous les moyens.
