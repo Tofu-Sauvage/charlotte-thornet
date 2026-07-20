@@ -164,6 +164,22 @@ h1 {
   padding: 1.5rem;
 }
 
+.post-preview-with-image {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 160px;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.post-preview-image img {
+  display: block;
+  width: 160px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1.5rem rgb(22 32 51 / 0.18);
+}
+
 .post-preview h2 {
   margin-bottom: 0.25rem;
 }
@@ -184,6 +200,19 @@ time {
 .post-content {
   margin-top: 2rem;
   font-size: 1.1rem;
+}
+
+.post-image {
+  width: min(100%, 320px);
+  margin: 2rem auto 0;
+}
+
+.post-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 1rem 2rem rgb(22 32 51 / 0.22);
 }
 
 .book-list {
@@ -240,6 +269,14 @@ time {
 }
 
 @media (max-width: 640px) {
+  .post-preview-with-image {
+    display: block;
+  }
+
+  .post-preview-image {
+    display: none;
+  }
+
   .book-card {
     grid-template-columns: 1fr;
   }

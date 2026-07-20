@@ -21,6 +21,7 @@ const { Content } = await render(post);
   title={`${post.data.title} — Charlotte Thornet`}
   description={post.data.description}
   canonical={`/journal/${post.id}`}
+  image={post.data.image}
   type="article"
 >
   <article class="post">
@@ -35,5 +36,16 @@ const { Content } = await render(post);
     <div class="post-content">
       <Content />
     </div>
+
+    {
+      post.data.image && (
+        <figure class="post-image">
+          <img
+            src={post.data.image}
+            alt={post.data.imageAlt ?? `Illustration de l’article ${post.data.title}`}
+          />
+        </figure>
+      )
+    }
   </article>
 </BaseLayout>

@@ -19,18 +19,33 @@ const posts = (
   <section class="post-list">
     {
       posts.map((post) => (
-        <article class="post-preview">
-          <p class="eyebrow">{post.data.category}</p>
+        <article class:list={["post-preview", { "post-preview-with-image": post.data.image }]}>
+          <div>
+            <p class="eyebrow">{post.data.category}</p>
 
-          <time datetime={post.data.pubDate.toISOString()}>
-            {post.data.pubDate.toLocaleDateString("fr-FR")}
-          </time>
+            <time datetime={post.data.pubDate.toISOString()}>
+              {post.data.pubDate.toLocaleDateString("fr-FR")}
+            </time>
 
-          <h2>
-            <a href={`/journal/${post.id}`}>{post.data.title}</a>
-          </h2>
+            <h2>
+              <a href={`/journal/${post.id}`}>{post.data.title}</a>
+            </h2>
 
-          <p>{post.data.description}</p>
+            <p>{post.data.description}</p>
+          </div>
+
+          {post.data.image && (
+            <a
+              class="post-preview-image"
+              href={`/journal/${post.id}`}
+              aria-label={`Lire l’article ${post.data.title}`}
+            >
+              <img
+                src={post.data.image}
+                alt={post.data.imageAlt ?? `Illustration de l’article ${post.data.title}`}
+              />
+            </a>
+          )}
         </article>
       ))
     }
