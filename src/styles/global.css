@@ -60,26 +60,6 @@ nav a {
   padding: 5rem 0;
 }
 
-.home-quote {
-  max-width: 720px;
-  margin: 0 auto 4rem;
-  padding: 1.5rem;
-  border-block: 1px solid var(--blue);
-  text-align: center;
-}
-
-.home-quote blockquote {
-  margin: 0;
-  font-size: clamp(1.15rem, 3vw, 1.5rem);
-  line-height: 1.45;
-}
-
-.home-quote figcaption {
-  margin-top: 0.75rem;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
 .home-section {
   margin-block: 4rem;
 }
@@ -150,6 +130,33 @@ h1 {
 .site-footer a {
   color: inherit;
   text-decoration: none;
+}
+
+.site-footer .social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+}
+
+.social-link svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor;
+}
+
+.social-link rect,
+.social-link circle:not(.icon-dot) {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.social-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .post-list {

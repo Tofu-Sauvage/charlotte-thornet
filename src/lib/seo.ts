@@ -7,7 +7,10 @@ export const siteConfig = {
   defaultDescription: "Autrice de fantasy, dragons, magie et ironie.",
   defaultImage: "/images/c-thornet.jpeg",
   authorImage: "/images/c-thornet.jpeg",
-  sameAs: ["https://charlotte-thornet.tumblr.com"],
+  sameAs: [
+    "https://charlotte-thornet.tumblr.com",
+    "https://www.instagram.com/charlotte.thornet/",
+  ],
 };
 
 type JsonLdValue =

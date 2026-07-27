@@ -1,12 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BookCard from "../components/BookCard.astro";
-import { quotes } from "../data/quotes";
 import { createAuthorJsonLd, siteConfig } from "../lib/seo";
 import { getCollection } from "astro:content";
 
 const books = await getCollection("books");
-const fallbackQuote = quotes[0];
 ---
 
 <BaseLayout
@@ -19,46 +17,15 @@ const fallbackQuote = quotes[0];
     <p class="eyebrow">Fantasy · Dragons · Magie · Ironie</p>
     <h1>Charlotte Thornet</h1>
     <p>
-      Écrire pour que cohabitent dragons, magie, forces cosmiques, dérision et
-      tendresse.
+      Écrire pour que cohabitent dragons, magie, forces cosmiques et dérision.
+    </p>
+    <p>
+      Inventer un monde merveilleux pour raconter nos différences, nos contradictions et nos tendresses. 
+    </p>
+    <p>
+      Lancer des sorts pour qu'ils révèlent ce qui nous rend singuliers.
     </p>
   </section>
-
-  <figure class="home-quote" data-random-quote>
-    <blockquote data-random-quote-text>« {fallbackQuote.text} »</blockquote>
-    {
-      fallbackQuote.source && (
-        <figcaption data-random-quote-source>{fallbackQuote.source}</figcaption>
-      )
-    }
-  </figure>
-
-  <script
-    is:inline
-    type="application/json"
-    id="home-quotes"
-    set:html={JSON.stringify(quotes)}
-  />
-
-  <script>
-    const quotesData = document.getElementById("home-quotes");
-    const quoteText = document.querySelector("[data-random-quote-text]");
-    const quoteSource = document.querySelector<HTMLElement>(
-      "[data-random-quote-source]",
-    );
-
-    if (quotesData?.textContent && quoteText) {
-      const quotes = JSON.parse(quotesData.textContent);
-      const quote = quotes[Math.floor(Math.random() * quotes.length)];
-
-      quoteText.textContent = `« ${quote.text} »`;
-
-      if (quoteSource) {
-        quoteSource.textContent = quote.source ?? "";
-        quoteSource.hidden = !quote.source;
-      }
-    }
-  </script>
 
   <section class="home-section">
     <div class="section-heading">
