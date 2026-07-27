@@ -16,14 +16,14 @@ Figurez-vous que corruption et abus de pouvoir n'épargnent pas les mondes fanta
 
 Lorsqu'il faut se convaincre qu'un suicide est véritablement un suicide... c'est qu'il s'agit rarement d'un suicide.
 
-Et Patricia Saugrenuit s'y connaît ! Les enquêtes criminelles, c'est son métier. Ou plutôt : c'est ce qu'elle écrit dans ses romans à succès, lus du Méridionis jusqu'au Norient.
+Et Patricia Saugrenuit s'y connaît ! Les enquêtes criminelles, c'est son métier. Enfin... c'est ce qu'elle écrit dans ses romans à succès, lus du Méridionis jusqu'au Norient.
 
-Mais lorsque son propre fils se retrouve mêlé à une affaire suspecte dont les autorités se contrefichent, la frontière entre fiction et réalité commence à dangereusement s'effriter.
+Mais lorsque son propre fils se retrouve mêlé à une affaire suspecte dont les autorités se contrefichent, la frontière entre fiction et réalité commence dangereusement à s'effriter.
 
 Entre corruption ordinaire, magie approximative et dragons amateurs de biscuits, Port-Épine s'apprête à découvrir le prix des secrets et le coût des lubies.
 
-Et aussi que peu de créatures acceptent les chaînes.
-
 ## Pourquoi ce roman ?
 
-Parce que certaines injustices doivent être dénoncées, par tous les moyens.
+Parce que les injustices doivent être dénoncées, à grand coup de magie et de feu de dragon s'il le faut !
+
+Ce livre raconte une histoire attachante qui, en chemin, invite le lecteur à regarder autrement certaines réalités.
