@@ -44,7 +44,13 @@ const canonicalUrl = absoluteUrl(canonical);
       <Content />
       {
         book.data.amazon && (
-          <a class="button" href={book.data.amazon}>
+          <a
+            class="button"
+            href={book.data.amazon}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Acheter ${book.data.title} sur Amazon (nouvel onglet)`}
+          >
             📖 Acheter le livre
           </a>
         )
