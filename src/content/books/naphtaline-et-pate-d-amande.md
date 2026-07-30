@@ -5,7 +5,7 @@ subtitle: "Second livre du Cosmovarium"
 
 releaseDate: 2026-12-02
 
-cover: "/images/coming-soon-img.webp"
+cover: "/images/naphtaline-et-pate-d-amande.webp"
 
 status: "coming-soon"
 ---
